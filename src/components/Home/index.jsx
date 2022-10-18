@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <Container>
       <h1>Home</h1>
-      <Input width="200px" placeholder="test" />
+      <Input placeholder="test" />
       <Button>test</Button>
     </Container>
   );

@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { Container, Wrapper, Section, Logo, Link, Main } from "./style";
 import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic/";
+import Filter from "../Filter";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Home = () => {
       <Main>
         <Wrapper>
           <Section onClick={() => navigate("/home")} logo>
-            <Logo /> <h3>Houzing</h3>
+            <Logo /> <h3 style={{ color: "white" }}>Houzing</h3>
           </Section>
           <Section>
             {navbar.map(({ title, path, hidden }, index) => {
@@ -35,6 +36,7 @@ const Home = () => {
           </Section>
         </Wrapper>
       </Main>
+      <Filter />
       <Outlet />
     </Container>
   );
