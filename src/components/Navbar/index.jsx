@@ -36,7 +36,7 @@ const Home = () => {
           </Section>
         </Wrapper>
       </Main>
-      <Filter />
+      <Filter /> 
       <Outlet />
     </Container>
   );
