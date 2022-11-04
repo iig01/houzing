@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
 import { Arrow, Blur, Container, Content, Img } from "./style";
 import { Carousel } from "antd";
-import img1 from "../../assets/img/apartment1.png";
+import img1 from "../../assets/img/apartment.jpg";
 import img2 from "../../assets/img/apartment2.png";
 
 const GenCarousel = () => {
+  const slider = useRef();
+
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
@@ -18,8 +20,6 @@ const GenCarousel = () => {
     if (name === "right") slider.current.prev();
   };
 
-  const slider = useRef();
-
   return (
     <Container>
       <Carousel ref={slider} afterChange={onChange}>
@@ -32,7 +32,7 @@ const GenCarousel = () => {
         <Content.Desc>112 Glenwood Ave Hyde Park, Boston, MA</Content.Desc>
         <Content.Price>$5,250/mo</Content.Price>
       </Content>
-      <Arrow data-name="left" onClick={onMove} left />
+      <Arrow data-name="left" onClick={onMove} left={"true"} />
       <Arrow onClick={onMove} data-name="right" />
     </Container>
   );
