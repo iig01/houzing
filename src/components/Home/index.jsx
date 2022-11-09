@@ -1,15 +1,13 @@
 import React from "react";
-import GenCarousel from "../Carousel";
-import HouseCard from "../HouseCard";
-import CategoryCard from "../CategoryCard";
+import Carousel from "../Carousel";
+import Category from "../Category";
 import { Container } from "./style";
 
 const Home = () => {
   return (
     <Container>
-      <GenCarousel />
-      <HouseCard />
-      <CategoryCard />
+      <Carousel />
+      <Category />
     </Container>
   );
 };

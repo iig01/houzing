@@ -2,7 +2,6 @@ import { Container, Content, Details, Divider, Icons, Img } from "./style";
 import noimg from "../../assets/img/noimg.jpeg";
 
 const HouseCard = ({ data = {} }) => {
-  console.log(data);
   const {
     attachments,
     houseDetails,
@@ -12,7 +11,7 @@ const HouseCard = ({ data = {} }) => {
     city,
     country,
     description,
-    category
+    category,
   } = data;
   return (
     <Container>
@@ -23,7 +22,7 @@ const HouseCard = ({ data = {} }) => {
         </div>
         <div className="info">
           {address || "Quincy St, Brooklyn, NY, USA"} -{" "}
-          {category?.name || "Category"}
+          {category?.name || "Category"} {houseDetails?.room || 0}-rooms
         </div>
         <Details>
           <Details.Item>
