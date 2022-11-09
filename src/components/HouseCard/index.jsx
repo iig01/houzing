@@ -2,7 +2,6 @@ import { Container, Content, Details, Divider, Icons, Img } from "./style";
 import noimg from "../../assets/img/noimg.jpeg";
 
 const HouseCard = ({ data = {} }) => {
-  console.log(data);
   const {
     attachments,
     houseDetails,
@@ -12,6 +11,7 @@ const HouseCard = ({ data = {} }) => {
     city,
     country,
     description,
+    category,
   } = data;
   return (
     <Container>
@@ -20,7 +20,10 @@ const HouseCard = ({ data = {} }) => {
         <div className="subTitle inline">
           {city}, {country}, {description}
         </div>
-        <div className="info">{address || "Quincy St, Brooklyn, NY, USA"}</div>
+        <div className="info">
+          {address || "Quincy St, Brooklyn, NY, USA"} -{" "}
+          {category?.name || "Category"} {houseDetails?.room || 0}-rooms
+        </div>
         <Details>
           <Details.Item>
             <Icons.Bed />
@@ -36,7 +39,7 @@ const HouseCard = ({ data = {} }) => {
           </Details.Item>
           <Details.Item>
             <Icons.Ruler />
-            <div className="info">Ruler{houseDetails?.area || 0} m2</div>
+            <div className="info">Area{houseDetails?.area || 0}</div>
           </Details.Item>
         </Details>
       </Content>
@@ -44,9 +47,9 @@ const HouseCard = ({ data = {} }) => {
       <Content footer>
         <Details.Item footer>
           <div className="info" style={{ textDecoration: "line-through" }}>
-            {salePrice || 0}/mo
+            ${salePrice || 0}/mo
           </div>
-          <div className="subTitle">{price || 0}/mo</div>
+          <div className="subTitle">${price || 0}/mo</div>
         </Details.Item>
         <Details.Item row>
           <Icons.Resize />

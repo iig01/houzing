@@ -6,7 +6,9 @@ import { ReactComponent as ruler } from "../../assets/icons/ruler.svg";
 import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 const Container = styled.div`
-  width: 320px;
+  width: 100%;
+  max-width: 380px;
+  min-width: 330px;
   height: 430px;
   border: 1px solid #e6e9ec;
   :hover {
@@ -19,8 +21,8 @@ const Container = styled.div`
 const Img = styled.img`
   width: 100%;
   max-height: 220px;
-  min-height: 220px;
-  margin-bottom: 24px;
+  min-height: 200px;
+  /* margin-bottom: 24px; */
 `;
 
 const Content = styled.div`
