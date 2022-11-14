@@ -61,3 +61,7 @@ body {
   color: black !important;
   font-size: 25px !important;
 }
+
+.ant-carousel .slick-dots-bottom {
+  width: inherit;
+}

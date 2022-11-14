@@ -29,8 +29,6 @@ const Filter = () => {
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
 
-  console.log(Number(query.get("category_id")), "id");
-
   const onChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };

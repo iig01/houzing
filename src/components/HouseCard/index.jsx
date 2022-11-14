@@ -1,7 +1,7 @@
 import { Container, Content, Details, Divider, Icons, Img } from "./style";
 import noimg from "../../assets/img/noimg.jpeg";
 
-const HouseCard = ({ data = {} }) => {
+const HouseCard = ({ data = {}, gap }) => {
   const {
     attachments,
     houseDetails,
@@ -13,8 +13,9 @@ const HouseCard = ({ data = {} }) => {
     description,
     category,
   } = data;
+
   return (
-    <Container>
+    <Container gap={gap}>
       <Img src={(attachments && attachments[0]?.imgPath) || noimg} />
       <Content>
         <div className="subTitle inline">
