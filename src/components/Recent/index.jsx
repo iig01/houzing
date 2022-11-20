@@ -45,13 +45,6 @@ const Recent = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   fetch(`${url}/categories/list`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       setData(res?.data || []);
-  //     });
-  // }, []);
   useEffect(() => {
     fetch(`${url}/houses/list`)
       .then((res) => res.json())
@@ -59,7 +52,6 @@ const Recent = () => {
         setData(res?.data || []);
       });
   }, []);
-  console.log(data);
   return (
     <Container>
       <Content>
@@ -72,9 +64,10 @@ const Recent = () => {
         {data.map((value) => {
           return (
             <HouseCard
+              key={value.id}
               gap={10}
               data={value}
-              onClick={() => navigate(`/properties?category_id=${value.id}`)}
+              onClick={() => navigate(`/properties/${value.id}`)}
             />
           );
         })}

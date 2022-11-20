@@ -41,7 +41,7 @@ var settings = {
   ],
 };
 
-const GenCarousel = () => {
+const Category = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const GenCarousel = () => {
         setData(res?.data || []);
       });
   }, []);
-  console.log(data);
+
   return (
     <Container>
       <Content>
@@ -65,6 +65,7 @@ const GenCarousel = () => {
         {data.map((value) => {
           return (
             <CategoryCard
+              key={value.id}
               data={value}
               onClick={() => navigate(`/properties?category_id=${value.id}`)}
             />
@@ -75,4 +76,4 @@ const GenCarousel = () => {
   );
 };
 
-export default GenCarousel;
+export default Category;
