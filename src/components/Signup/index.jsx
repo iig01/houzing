@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 
-const Signin = () => {
+const Signup = () => {
   const request = useRequest();
   const [body, setBody] = useState({});
   const navigate = useNavigate();
@@ -21,27 +21,31 @@ const Signin = () => {
   };
 
   const onSubmit = async () => {
-    request({ me: true, url: `/public/auth/login`, method: "POST", body }).then(
-      (res) => {
-        if (res?.authenticationToken) {
-          navigate("/home");
-          localStorage.setItem("token", res?.authenticationToken);
-        }
+    request({
+      me: true,
+      url: `/public/auth/register`,
+      method: "POST",
+      body,
+    }).then((res) => {
+      if (res) {
+        navigate("/signin");
         info();
       }
-    );
+    });
   };
 
   return (
     <Content>
-      <div className="subTitle">Sign in</div>
+      <div className="subTitle">Sign up</div>
       <Input onChange={onChange} placeholder="email" type="email" />
+      <Input onChange={onChange} placeholder="firstname" type="text" />
+      <Input onChange={onChange} placeholder="lastaname" type="text" />
       <Input onChange={onChange} placeholder="password" type="password" />
       <Button width="%" onClick={onSubmit}>
-        Login
+        Sign up
       </Button>
     </Content>
   );
 };
 
-export default Signin;
+export default Signup;
