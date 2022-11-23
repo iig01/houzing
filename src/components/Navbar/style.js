@@ -49,4 +49,25 @@ const Link = styled(NavLink)`
   padding: 0 32px;
 `;
 
-export { Container, Wrapper, Section, Logo, Link, Main };
+const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 177px;
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 16px;
+  gap: 16px;
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+    0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+`;
+
+Menu.Item = styled.div`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 20px;
+`;
+
+export { Container, Wrapper, Section, Logo, Link, Main, Menu };
